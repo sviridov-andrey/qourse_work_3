@@ -13,7 +13,3 @@ def filtered_executed_operation(filename):
 
 
 filtered_executed_operation("operations.json")
-
-
-
-
