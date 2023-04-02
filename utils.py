@@ -2,7 +2,7 @@ import json
 from classes import OutputTransactions
 
 
-def filtered_executed_transactions(filename):
+def open_json_file(filename):
     """открывает файл operations.json"""
 
     with open(filename, 'r', encoding='utf-8') as file:
@@ -33,13 +33,3 @@ def add_last_five_transactions(sorted_data):
                                                  i['description'], i.setdefault('from', 'NoValue'), i['to'] )
                               for i in sorted_data]
     return last_five_transactions
-
-
-def output_last_five_transactions(last_five_transactions):
-    """выводит обработанные данные последних пяти банковских операций"""
-
-    for i in last_five_transactions:
-        print(f'\n{i.date_time()}  {i.description}\n'
-              f'{i.encryption_from()}{i.encryption_to()}\n'
-              f'{i.amount} {i.name}'
-              )

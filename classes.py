@@ -2,7 +2,7 @@ import time
 
 
 class OutputTransactions:
-    def __init__(self, date, amount, name, description, from_, to):
+    def __init__(self, date=None, amount=None, name=None, description=None, from_=None, to=None):
         self.date = date
         self.amount = amount
         self.name = name
@@ -40,5 +40,5 @@ class OutputTransactions:
             return self.encryption_bank_card(self.to)
 
     def __repr__(self):
-        return (f'OutputTransactions {self.date}, {self.description}, {self.from_} '
+        return (f'OutputTransactions, {self.date}, {self.description}, {self.from_}, '
                 f'{self.to}, {self.amount}, {self.name}')
